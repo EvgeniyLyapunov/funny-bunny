@@ -1,0 +1,74 @@
+@import '../../style/base/vars';
+
+.fd-widget {
+	width: 800px;
+	height: 530px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 2px solid $base-border-color;
+	border-radius: 5px;
+	background-color: #fcf9ea;
+	box-shadow: $widget-box-shadow;
+	&__top {
+		width: 100%;
+		height: 92px;
+		border-bottom: 2px solid $base-border-color;
+		&-header {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			&-pic-box {
+				width: 80px;
+				height: 80px;
+			}
+			&-img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			&-title {
+				font-family: 'Poppins';
+				font-size: 48px;
+				font-weight: 400;
+				text-shadow: $h1-title-text-shadow;
+			}
+		}
+	}
+	&__control {
+		width: 100%;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+	&__view {
+		width: 90%;
+		height: 350px;
+		overflow-y: auto;
+		border: 2px solid $base-border-color;
+		border-radius: 5px;
+		box-shadow: #03045e59 0px -2px 6px 0px inset;
+	}
+	&__bottom {
+		width: 100%;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&-switch {
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 20px solid $secondary-fill-color;
+			transition: 0.2s all ease-in-out;
+			cursor: pointer;
+			&:hover {
+				border-left: 12px solid transparent;
+				border-right: 12px solid transparent;
+				border-top: 24px solid $base-border-color;
+			}
+		}
+	}
+}

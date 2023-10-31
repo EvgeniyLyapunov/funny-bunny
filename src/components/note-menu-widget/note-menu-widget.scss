@@ -1,0 +1,17 @@
+.note-menu {
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	background: url('./doggy-explorer.png') right 20px top 20px / 80px 80px no-repeat;
+	&__item {
+		width: 100%;
+		margin-bottom: 15px;
+		display: flex;
+		align-items: center;
+		&-btn {
+			width: 140px !important;
+			margin-right: 30px;
+		}
+	}
+}
