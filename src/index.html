@@ -5,30 +5,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./img/favicon/doggy.ico" type="image/x-icon">
-  <title>funny doggy</title>
+  <link rel="shortcut icon" href="./img/favicon/rabbit.ico" type="image/x-icon">
+  <title>funny bunny</title>
 </head>
 
 <body>
   <div class="container" id="root"></div>
   <!-- <div class="container">
-    <div class="fd-widget">
-      <div class="fd-widget__top">
-        <div class="fd-widget__top-header">
-          <div class="fd-widget__top-header-pic-box">
-            <img class="fd-widget__top-header-img" src="./components/fd-widget/doggy-girlfriend.png" alt="funny doggy">
+    <div class="funny-bunny">
+      <div class="funny-bunny__top">
+        <div class="funny-bunny__top-header">
+          <div class="funny-bunny__top-header-pic-box">
+            <img class="funny-bunny__top-header-img" src="./components/funny-bunny/rabbit-girlfriend.png"
+              alt="funny bunny">
           </div>
-          <h1 class="fd-widget__top-header-title">funny doggy</h1>
+          <h1 class="funny-bunny__top-header-title">funny bunny</h1>
         </div>
       </div>
-      <div class="fd-widget__control">
+      <div class="funny-bunny__control">
         <button class="btn">Сервисы</button>
         <button class="btn">Добавить</button>
         <button class="btn">Загрузки</button>
         <button class="btn">Избранное</button>
         <button class="btn">Заметка</button>
       </div>
-      <div class="fd-widget__view">
+      <div class="funny-bunny__view">
+
+        <ul class="notes-list">
+          <li class="note">
+            <div class="note__header">
+              <div class="note__header-date">
+                <span class="note__header-date-info">15:23 10.10.23</span>
+                <span class="note__header-date-favorites"></span>
+              </div>
+              <span class="note__header-pin"></span>
+            </div>
+            <div class="note__main">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quo nisi facilis necessitatibus magnam?
+            </div>
+            <div class="note__footer">
+              <span class="note__footer-pen"></span>
+              <span class="note__footer-trash"></span>
+            </div>
+          </li>
+        </ul>
+
+
         <ul class="note-menu">
           <li class="note-menu__item">
             <button class="note-menu__item-btn btn">Новая</button>
@@ -47,11 +69,29 @@
             <span class="view__item-descr">Вывести списком все заметки, помеченные как избранные</span>
           </li>
         </ul>
-      </div>
-      <div class="fd-widget__bottom">
-        <span class="fd-widget__bottom-switch"></span>
+
+        <div class="confirm">
+          <div class="confirm-modal">
+            <div class="confirm-modal__info-block">
+              <span class="confirm-modal__msg">Удалить заметку?</span>
+              <div class="confirm-modal__btn-block">
+                <span class="confirm-modal__btn-no"></span>
+                <cpan class="confirm-modal__btn-yes"></cpan>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <form class="new-note-form">
+      <textarea class="new-note-form__textarea" name="newnote" rows="3"></textarea>
+      <div class="new-note-form__btn-block">
+        <span class="new-note-form__close"></span>
+        <button class="new-note-form__submit btn" type="submit">Сохранить</button>
+      </div>
+    </form>
+
   </div> -->
 </body>
 

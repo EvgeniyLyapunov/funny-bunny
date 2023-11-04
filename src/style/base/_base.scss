@@ -39,13 +39,18 @@ body {
 		background-color: $hover-button-bg-color;
 		box-shadow: none;
 	}
+	&_active {
+		box-shadow: $active-menu-bar-btn;
+		background-color: $hover-button-bg-color;
+	}
 }
 
 .container {
 	width: 1200px;
 	height: 100vh;
 	margin: 0 auto;
-	padding-top: 70px;
+	padding-top: 30px;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }

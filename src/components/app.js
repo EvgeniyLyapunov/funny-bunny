@@ -1,5 +1,7 @@
-import FunnyDoggyWidget from './fd-widget/FunnyDoggyWidget';
+import 'animate.css';
+
+import FunnyBunny from './funny-bunny/FunnyBunny';
 
 const root = document.getElementById('root');
-const fdWidget = new FunnyDoggyWidget(root);
-fdWidget.renderToDOM();
+const funnybunny = new FunnyBunny(root);
+funnybunny.renderToDOM();

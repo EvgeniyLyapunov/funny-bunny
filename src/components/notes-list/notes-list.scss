@@ -1,0 +1,97 @@
+@import '../../style/base/vars';
+
+.notes-list {
+	width: 100%;
+	padding: 10px 25px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.note {
+	width: 100%;
+	padding: 5px 12px;
+	margin-bottom: 7px;
+	border-radius: 4px;
+	box-shadow: $note-box-shadow;
+	&__header {
+		width: 100%;
+		margin-bottom: 5px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&-date {
+			display: flex;
+			align-items: center;
+			&-info {
+				width: 90px;
+				display: inline-block;
+				margin-right: 16px;
+				font-size: 12px;
+				color: #48cae4;
+			}
+			&-favorites {
+				width: 15px;
+				height: 15px;
+				display: block;
+				background: url('../../img/icons/star-outlined.svg') center/cover no-repeat;
+				transition: 0.3s background ease-in-out;
+				cursor: pointer;
+				&:hover {
+					background: url('../../img/icons/star-outline-hover.svg') center/cover no-repeat;
+				}
+				&_active {
+					background: url('../../img/icons/star-filled.svg') center/cover no-repeat;
+				}
+			}
+		}
+		&-pin {
+			width: 25px;
+			height: 25px;
+			display: block;
+			background: url('../../img/icons/pin.svg') center/contain no-repeat;
+			transition: 0.3s background ease-in-out;
+			cursor: pointer;
+			&:hover {
+				background: url('../../img/icons/pin-hover.svg') center/contain no-repeat;
+			}
+			&_active {
+				background: url('../../img/icons/pinned.svg') center/contain no-repeat;
+			}
+		}
+	}
+	&__main {
+		font-size: 14px;
+		white-space: pre-wrap;
+	}
+	&__footer {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		&-pen {
+			display: block;
+			width: 16px;
+			height: 16px;
+			margin-right: 25px;
+			background: url('../../img/icons/pen.svg') center/contain no-repeat;
+			transition: 0.3s background ease-in-out;
+			cursor: pointer;
+			&:hover {
+				background: url('../../img/icons/pen-hover.svg') center/contain no-repeat;
+			}
+		}
+		&-trash {
+			display: block;
+			width: 16px;
+			height: 16px;
+			background: url('../../img/icons/trash.svg') center/contain no-repeat;
+			transition: 0.3s background ease-in-out;
+			cursor: pointer;
+			&:hover {
+				background: url('../../img/icons/trash-hover.svg') center/contain no-repeat;
+			}
+		}
+	}
+}

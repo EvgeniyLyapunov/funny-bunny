@@ -1,0 +1,66 @@
+@import '../../style/base/vars';
+
+.confirm {
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: hsla(0, 0%, 100%, 0.85);
+	border-radius: 4px;
+	&-modal {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		width: 70%;
+		height: 60%;
+		background-color: #fff;
+		background-image: url('./rabbit-nothing.png');
+		background-position: right 40px center;
+		background-size: 120px 120px;
+		background-repeat: no-repeat;
+		border-radius: 4px;
+		box-shadow: $button-box-shadow;
+		&__info-block {
+			margin-left: 50px;
+		}
+		&__msg {
+			display: inline-block;
+			margin-bottom: 20px;
+			font-size: 20px;
+		}
+		&__btn-block {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+		&__btn-no {
+			display: block;
+			width: 32px;
+			height: 32px;
+			background: url('./confirm-no.svg') center / contain no-repeat;
+			transition: 0.3s transform ease-in-out;
+			cursor: pointer;
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+		&__btn-yes {
+			display: block;
+			width: 32px;
+			height: 32px;
+			background: url('./confirm-yes.svg') center / contain no-repeat;
+			transition: 0.3s transform ease-in-out;
+			cursor: pointer;
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+	}
+}
