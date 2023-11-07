@@ -1,6 +1,7 @@
 import MenuBarWidget from '../menu-bar-widget/MenuBarWidget';
 import NoteMenuWidget from '../note-menu-widget/NoteMenuWidget';
 import NewNoteWidget from '../new-note-widget/NewNoteWidget';
+import Search from '../search/Search';
 import NotesList from '../notes-list/NotesList';
 import ConfirmModal from '../confirm-modal/ConfirmModal';
 import { titleMsgStream, titleMsgObserver } from '../message-from-title-widget/messageFromTitle';
@@ -29,6 +30,7 @@ class FunnyBunny {
 
 		this.noteMenuWidget = new NoteMenuWidget(this);
 		this.newNoteWidget = new NewNoteWidget(this.parentElement, this);
+		this.searchWidget = new Search(this.parentElement, this);
 		this.notesList = null;
 
 		this.onSubmitNewNote = this.onSubmitNewNote.bind(this);
@@ -79,6 +81,9 @@ class FunnyBunny {
 			const result = await getRequest();
 			if (result.status === 200) {
 				this.store.getSavedState(result.data);
+			} else {
+				const titleStream$ = titleMsgStream(this.title, 'Сохранёные заметки не загружены');
+				titleStream$.subscribe(titleMsgObserver);
 			}
 		} catch (error) {
 			const titleStream$ = titleMsgStream(this.title, 'Сохранёные заметки не загружены');
@@ -86,11 +91,11 @@ class FunnyBunny {
 		}
 
 		this.newNoteWidget.renderToDOM();
+		this.searchWidget.renderToDOM();
 	}
 
 	async onSubmitNewNote(note) {
 		let result;
-
 		if (this.newNoteWidget.noteForEdit) {
 			result = await putRequest('/notes', JSON.stringify(note));
 		} else {
@@ -123,7 +128,23 @@ class FunnyBunny {
 		titleStream$.subscribe(titleMsgObserver);
 	}
 
-	showAllNotes() {
+	async showAllNotes() {
+		if (this.state.notes.length === 0) {
+			try {
+				const result = await getRequest();
+				if (result.status === 200) {
+					this.store.getSavedState(result.data);
+				} else {
+					const titleStream$ = titleMsgStream(this.title, 'Сохранёные заметки не загружены');
+					titleStream$.subscribe(titleMsgObserver);
+					return;
+				}
+			} catch (error) {
+				const titleStream$ = titleMsgStream(this.title, 'Сохранёные заметки не загружены');
+				titleStream$.subscribe(titleMsgObserver);
+				return;
+			}
+		}
 		this.notesList.renderToDOM(this.state.notes, true);
 		this.activeElementInView.push(this.notesList);
 	}
@@ -190,6 +211,7 @@ class FunnyBunny {
 
 	onEditNote(id) {
 		const selectedNote = this.state.notes.filter((n) => n.id === id)[0];
+		this.searchWidget.slideOff();
 		this.newNoteWidget.slideOn(selectedNote);
 	}
 

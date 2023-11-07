@@ -5,6 +5,7 @@
 	height: 530px;
 	display: flex;
 	flex-direction: column;
+	flex-shrink: 0;
 	align-items: center;
 	border: 2px solid $base-border-color;
 	border-radius: 5px;
@@ -50,6 +51,7 @@
 		position: relative;
 		width: 90%;
 		height: 350px;
+		// margin: 0 auto;
 		overflow-y: auto;
 		border: 2px solid $base-border-color;
 		border-radius: 5px;

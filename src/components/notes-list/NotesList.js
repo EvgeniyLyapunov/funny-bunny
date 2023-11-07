@@ -112,9 +112,11 @@ class NotesList {
 	}
 
 	reRenderToDOM(notesDataList, animate) {
-		this.element.remove();
-		this.element = null;
-		this.list = [];
+		if (this.element) {
+			this.element.remove();
+			this.element = null;
+			this.list = [];
+		}
 		this.renderToDOM(notesDataList, animate);
 	}
 

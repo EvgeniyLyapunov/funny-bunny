@@ -44,6 +44,7 @@ class NoteMenuWidget {
 
 		this.btnNewNote = this.element.querySelector('.note-menu__item-btn-new');
 		this.btnNewNote.addEventListener('click', () => {
+			this.funnybunny.searchWidget.slideOff();
 			this.funnybunny.newNoteWidget.slideOn(null);
 		});
 
@@ -58,6 +59,12 @@ class NoteMenuWidget {
 			setTimeout(() => {
 				this.funnybunny.showAllNotes();
 			}, 600);
+		});
+
+		this.btnSearch = this.element.querySelector('.note-menu__item-btn-search');
+		this.btnSearch.addEventListener('click', () => {
+			this.funnybunny.newNoteWidget.slideOff();
+			this.funnybunny.searchWidget.slideOn();
 		});
 
 		return this.element;
